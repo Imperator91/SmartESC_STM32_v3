@@ -1,43 +1,45 @@
-For the last working "stancecoke" version, switch to the v0.5 branch!  
+Für die letzte funktionierende "stancecoke"-Version wechsle zum v0.5-Branch!
 https://github.com/Koxx3/SmartESC_STM32_v3/tree/v0.5
 
-Attention: new logic to activate the autodetect procedure:. 
-Pull the brake lever and press the dashboard button for 5 seconds!
+Achtung: Neue Logik zur Aktivierung des Autodetektionsverfahrens:
+Ziehe den Bremshebel und drücke die Dashboard-Taste für 5 Sekunden!
 
+Fork der EBiCS-Firmware für Lishui-Geräte. Portiert auf den Xiaomi M365-Controller.
+Verwende JST PA-Steckverbinder mit 2mm Pitch (muss noch bestätigt werden).
 
-Fork of EBiCS firmware for Lishui devices. Ported to Xaiomi M365 controller. 
-Use JST PA series 2mm pitch for the connectors. (need to be confirmed) 
+Dieser Branch funktioniert mit dem originalen M365-Dashboard.
+Anleitung zur Nutzung:
+Methode 1 (GitHub-Account erforderlich):
 
-This branch works with the original M365 dashboard  
+    Forke das Projekt-Repository auf deinen GitHub-Account, indem du auf das „Fork“-Symbol klickst.
+    Bearbeite die Datei config.h in deinem Repository online und committe die Änderungen.
+    Klicke auf die Schaltfläche „Actions“ in der Menüleiste der GitHub-Seite. Dort siehst du die „Workflows“.
+    Warte, bis der laufende Workflow abgeschlossen ist, dann klicke auf die Überschrift des Workflows.
+    Lade die generierte ZIP-Datei herunter, indem du auf das Würfelsymbol unten auf der Seite klickst.
+    Ein Tutorial findest du auf YouTube.
 
-How to use:  
-Method 1 (github account needed):  
-Fork the project repository to your github account by clicking the "Fork" icon.  
-Edit the config.h in your repository online and commit the changes.  
-Click on the "Actions" button in the menu bar of the github page. There you can see the "workflows".  
-Wait until the running workflow is finished, then click on the workflow headline.
-Download the zipfile with the generated zipfile by clicking on the cube icon at the bottom of the page.  
-You can find a tutorial at [YouTube](https://youtu.be/Pe2UTPPxX7U)  
+Methode 2 (Lokale Installation):
 
-Method 2 (lokal installation):  
-Install the [STM Cube IDE](https://www.st.com/en/development-tools/stm32cubeide.html#overview&secondary=st-get-software)  
-Start the IDE and install egit from the eclipse marketplace (Help --> Eclipse Marketplace...)  
-Import this repo from github (File --> Import --> git --> Projects from git)  
+    Installiere die STM Cube IDE.
+    Starte die IDE und installiere egit aus dem Eclipse Marketplace (Help → Eclipse Marketplace...).
+    Importiere dieses Repository von GitHub (File → Import → Git → Projects from Git).
+    Bearbeite die Datei config.h (im Ordner Core/Inc) nach deinen Wünschen.
+        Funktionierende Einstellungen für das originale M365 sind in den Kommentaren enthalten – nutze sie als bewährte Ausgangskonfiguration.
+    Klicke auf „Build“ (das Symbol mit dem Hammer).
+    Die fertige ZIP-Datei wird im Ordner /tools/zip-output generiert.
+    Kopiere die Datei auf dein Smartphone und flashe sie mit der App downG auf deinen Scooter.
 
-Edit the file config.h (in the folder Core/Inc) according to your wishes. Working settings for the original M365 are in the comments, so use them to have a proven start setting.  
+Nach dem Flashen:
 
-Click on "Build" (The icon with the hammer)  
+    Hebe das Hinterrad an, sodass der Motor frei drehen kann.
+    Drücke die Dashboard-Taste für 5 Sekunden – die Autodetektion beginnt.
+    Der Motor dreht sich langsam. Sobald er stoppt, ist der Scooter einsatzbereit.
 
-in the folder /tools/zip-output the zip-file ready for use with your scooter is generated.
-Copy it to your mobile phone and flash it to the scooter by the app downG.
+Dashboard-Tastenbelegung:
 
-After flashing, lift the motor, so it can spin in the air without load. Press the dashboard button for 5s, the autodetect routine starts. The motor turns slowly. After stopping, the scooter is ready to run.  
-
-Dashboard button use:  
-short press: switch lights  
-double click: switch ride modes  
-long press: switch off  
-very long press: run autodetect  
-
+    Kurzer Druck: Licht ein-/ausschalten
+    Doppelklick: Fahrmodus wechseln
+    Langer Druck: Ausschalten
+    Sehr langer Druck: Autodetektion starten
 
 ![PCB Layout M365](https://github.com/Koxx3/SmartESC_STM32_v3/blob/master/Documentation/PCB%20Layout%20M365.PNG)
